@@ -18,7 +18,6 @@ class_labels = ["Normal", "Cataract", "Diabetic Retinopathy", "Glaucoma"]
 UPLOAD_FOLDER = "static/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-
 # Home Page - Upload Form
 @app.route("/", methods=["GET", "POST"])
 def index():
