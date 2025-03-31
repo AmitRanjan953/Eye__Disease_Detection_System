@@ -76,7 +76,7 @@ Eye_Disease_Detection/
 - Deploy using cloud services (AWS, GCP, or Azure).
 
 ## Contributors
-- **Rohit Kumar Yadav**
+- **Rohit Kumar Yadav  (Team Leader)**
 - **Devasheesh Upreti**
 - **Palak Agrawal**
 - **Rohan Dorbi**
