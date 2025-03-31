@@ -1,84 +1,72 @@
 # Eye Disease Detection Using Deep Learning
 
-## Introduction
-This project classifies various types of eye diseases using deep learning. The diseases are categorized into:
+## Project Overview
+This project utilizes **deep learning** techniques to classify various **eye diseases** based on retinal images. The model is trained to recognize four categories:
 - **Normal**
 - **Cataract**
 - **Diabetic Retinopathy**
 - **Glaucoma**
 
-The model is trained using deep learning techniques and deployed as a web application using Flask.
+A pre-trained **Xception** model with **transfer learning** is used for feature extraction and classification. The system is deployed as a **Flask web application**, allowing users to upload images and receive predictions.
 
 ## Technologies Used
-- **Python**
-- **TensorFlow & Keras** (Deep Learning Framework)
-- **Flask** (Web Application Framework)
+- **Python 3.x**
+- **TensorFlow & Keras** (Deep Learning)
+- **Flask** (Web Framework)
 - **NumPy, Pandas, Matplotlib** (Data Processing & Visualization)
-
-## Prerequisites
-Ensure you have the following installed:
-- **Python 3.7+**
-- **Anaconda (optional)**
-- **Required Libraries**:
-  ```bash
-  pip install numpy pandas matplotlib tensorflow keras flask
-  ```
+- **OpenCV & PIL** (Image Processing)
 
 ## Dataset & Preprocessing
-- The dataset consists of images categorized into four disease classes.
-- Images are resized to **299x299** for compatibility with the Xception model.
-- Normalization is applied to scale pixel values between 0 and 1.
+- The dataset consists of labeled retinal images categorized into four disease classes.
+- Images are resized to **299x299** to match the input requirements of the **Xception** model.
+- **Normalization** is applied to scale pixel values between **0 and 1**.
 
 ## Model Training
-- **Pre-trained Model:** Xception
-- **Approach:** Transfer Learning
-- **Additional Layers:** Fully connected dense layers for classification
-- **Loss Function:** Categorical Crossentropy
-- **Optimizer:** Adam
-- **Metrics:** Accuracy
+The model follows these steps:
+1. **Load & Preprocess Data**
+2. **Configure ImageDataGenerator for Augmentation**
+3. **Use Xception for Feature Extraction**
+4. **Train Fully Connected Layers for Classification**
+5. **Save the Trained Model (`xception.h5`)**
 
-### Model Training Steps:
-1. **Load and Preprocess Data**
-2. **Configure ImageDataGenerator**
-3. **Use Xception as a Feature Extractor**
-4. **Train the Model**
-5. **Save the Model (`xception.h5`)**
+### Training Command:
+```bash
+python train_model.py --epochs 50 --batch_size 32 --learning_rate 0.001
+```
 
-## Deployment Using Flask
-- The trained model is deployed using Flask.
-- Users can upload an eye image, and the model predicts the disease category.
-- Flask serves the model's predictions through a web interface.
+## Deployment with Flask
+- The trained model is served using **Flask**.
+- Users can upload retinal images, and the system predicts the disease category.
+- The web interface is designed for easy interaction.
 
-### **Running the Flask App**
+### Running the Web Application:
 ```bash
 python app.py
 ```
 
-### **Endpoints**
-- **`/`**: Home page for image upload
-
 ## Project Structure
 ```
 Eye_Disease_Detection/
-│── app.py            # Flask Application
-│── xception.h5       # Trained Model
+│── app.py                 # Flask Application
+│── xception.h5            # Trained Model
 │── templates/
-│   └── index.html    # Frontend UI
-│── static/uploads/   # Uploaded Images
-│── Model_Training+testing.ipynb  # Jupyter Notebook
-└── README.md         # Documentation
+│   └── index.html         # Frontend UI
+│── static/uploads/        # Uploaded Images
+│── Model_Training.ipynb   # Jupyter Notebook for Training
+└── README.md              # Documentation
 ```
 
-## Future Improvements
-- Enhance dataset with more images for better generalization.
-- Implement Explainable AI (XAI) techniques to visualize predictions.
-- Extend support to additional eye diseases.
-- Deploy using cloud services (AWS, GCP, or Azure).
+## Future Enhancements
+- **Increase dataset size** for improved accuracy.
+- Implement **Explainable AI (XAI)** to provide insights into predictions.
+- Extend model support for additional **eye diseases**.
+- Deploy as a **cloud-based API** for broader accessibility.
 
 ## Contributors
-- **Rohit Kumar Yadav  (Team Leader)**
+- **Rohit Kumar Yadav (Team Leader)**
 - **Devasheesh Upreti**
 - **Palak Agrawal**
 - **Rohan Dorbi**
----
-This README provides a comprehensive guide to understanding and running the project.
+
+This project demonstrates the application of **AI in healthcare**, providing a potential solution for early eye disease detection and diagnosis.
+
