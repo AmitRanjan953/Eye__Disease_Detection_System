@@ -62,11 +62,5 @@ Eye_Disease_Detection/
 - Extend model support for additional **eye diseases**.
 - Deploy as a **cloud-based API** for broader accessibility.
 
-## Contributors
-- **Rohit Kumar Yadav (Team Leader)**
-- **Devasheesh Upreti**
-- **Palak Agrawal**
-- **Rohan Dorbi**
-
 This project demonstrates the application of **AI in healthcare**, providing a potential solution for early eye disease detection and diagnosis.
 
